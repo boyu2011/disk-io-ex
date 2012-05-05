@@ -1,0 +1,32 @@
+Assignment 4
+
+1.	Modeling disk I/O performance.
+
+	I can calculate the performance using some formulas below.
+
+	Seek Time 	: The time necessary to move the disk arm to the desired cylinder.
+	Formula   	: (4e-3) * | TrackX - TrackY | + 1
+
+	Total Time For I/O : SeekTime + Rotational latency + I/O
+	Formula : SeekTime + 0.5*(60*1e+3/7200) + I/O
+
+	Distance : The number of from head track to the request track.
+	Formula : | TrackX – TrackY |
+
+2.	Disk arm scheduling.
+	
+	I have implement disk arm scheduling algorithms for FCFS, SSTF, SCAN. According to the 	output of driver program, run the scheduling algorithms on these inputs and evaluate the 	efficiency of arm scheduling algorithms on different scenarios.
+
+	The following table shows the experiment results for processing 10000 disk requests.
+
+	
+	According to the data table, we can conclude : 
+	In the sequential access scenario, there is no apparent difference between these three algorithms.
+	In the localize access scenario, using SSTF or SCAN can get a better performance than FCFS.
+	In the random access scenario, using SSTF or SCAN can decrease disk access distance than 	FCFS. 
+
+3.	Driver programs.
+
+	Write a driver program to create the input for the disk I/O scheduling program above. Create the 	following  scenarios of output: I/O bound with sequential access, bursty I/O with localized 	access, and CPU bound  with random accesses to disk tracks. Run the disk arm scheduler on 	these inputs and assess the eﬃciency of  the arm scheduling algorithms on the diﬀerent 	scenarios.  
+
+	
